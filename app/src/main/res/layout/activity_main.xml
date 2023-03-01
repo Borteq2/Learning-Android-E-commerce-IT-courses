@@ -27,7 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/hot_deal" />
+            app:srcCompat="@drawable/ic_hot_deal" />
 
         <TextView
             android:id="@+id/contacts"
@@ -115,7 +115,7 @@
         android:contentDescription="@string/Sales_icon"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/courses"
-        app:srcCompat="@drawable/filter"
+        app:srcCompat="@drawable/ic_filter"
         tools:ignore="ImageContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -131,7 +131,7 @@
         tools:listitem="@layout/category_item" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/coursesRecycler"
+        android:id="@+id/courseRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"

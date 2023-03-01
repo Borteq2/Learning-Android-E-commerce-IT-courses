@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/category" />
+        app:srcCompat="@drawable/ic_category" />
 
     <TextView
         android:id="@+id/categoryTitle"
