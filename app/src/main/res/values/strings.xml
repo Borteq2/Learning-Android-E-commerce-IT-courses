@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">E-Commerce</string>
+    <string name="Sales_icon">Sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">Про нас</string>
+    <string name="main_scene_text">Главная</string>
+    <string name="courses">Courses</string>
+    <string name="app">App</string>
+</resources>
