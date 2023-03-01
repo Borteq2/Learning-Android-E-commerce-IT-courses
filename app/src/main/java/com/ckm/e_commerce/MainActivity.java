@@ -42,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 "Профессия Java\nразработчик",
                 "1 января",
                 "Начальный",
-                "#424345"));
+                "#424345",
+                "Test"));
         courseList.add(new Course(
                 2,
                 "python",
                 "Профессия Python\nразработчик",
                 "10 января",
                 "Начальный",
-                "#3FA52D"));
+                "#3FA52D",
+                "Test"));
 
 
         setCourseRecycler(courseList);
