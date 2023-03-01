@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.ckm.e_commerce.adapter.CategoryAdapter;
 import com.ckm.e_commerce.adapter.CourseAdapter;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView categoryRecycler, courseRecycler;
     CategoryAdapter categoryAdapter;
+
     static CourseAdapter courseAdapter;
     static List<Course> courseList = new ArrayList<>();
     static List<Course> fullCourseList = new ArrayList<>();
@@ -67,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         fullCourseList.addAll(courseList);
 
         setCourseRecycler(courseList);
+    }
+
+    public void openShoppingCart(View view) {
+        Intent intent = new Intent(this, OrderPage.class);
+        startActivity(intent);
     }
 
     private void setCourseRecycler(List<Course> courseList) {
