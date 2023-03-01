@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView categoryRecycler, courseRecycler;
     CategoryAdapter categoryAdapter;
-    CourseAdapter courseAdapter;
+    static CourseAdapter courseAdapter;
+    static List<Course> courseList = new ArrayList<>();
+    static List<Course> fullCourseList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         setCategoryRecycler(categoryList);
 
-        List<Course> courseList = new ArrayList<>();
-
         courseList.add(new Course(
                 1,
                 "java",
@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 "1 января",
                 "Начальный",
                 "#424345",
-                "Test"));
+                "Java (very fear)",
+                3));
         courseList.add(new Course(
                 2,
                 "python",
@@ -51,8 +52,19 @@ public class MainActivity extends AppCompatActivity {
                 "10 января",
                 "Начальный",
                 "#3FA52D",
-                "Test"));
+                "Python, Ssssss",
+                3));
+        courseList.add(new Course(
+                3,
+                "django",
+                "Профессия Django\nразработчик",
+                "10 января",
+                "Начальный",
+                "#006600",
+                "Im Django",
+                2));
 
+        fullCourseList.addAll(courseList);
 
         setCourseRecycler(courseList);
     }
@@ -67,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         courseRecycler.setAdapter(courseAdapter);
     }
 
-
     private void setCategoryRecycler(List<Category> categoryList) {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
@@ -79,4 +90,24 @@ public class MainActivity extends AppCompatActivity {
         categoryRecycler.setAdapter(categoryAdapter);
 
     }
+
+    public static void showCoursesByCategory(int category) {
+
+        courseList.clear();
+        courseList.addAll(fullCourseList);
+
+        List<Course> filterCourses = new ArrayList<>();
+
+        for(Course c : courseList) {
+            if(c.getCategory() == category)
+                filterCourses.add(c);
+        }
+
+        courseList.clear();
+        courseList.addAll(filterCourses);
+
+        courseAdapter.notifyDataSetChanged();
+
+    }
+
 }
